@@ -14,16 +14,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
         with:
-          node-version: '20'
-          cache: 'npm'
+          bun-version: latest
 
       - name: Install dependencies
         run: |
-          npm install
-          npm install -g expo-cli
+          bun install
+          bun add -g expo-cli
 
       - name: Clean existing ios directory
         run: |
@@ -32,7 +31,7 @@ jobs:
 
       - name: Generate native iOS files
         run: |
-          npx expo prebuild --platform ios --no-install
+          bunx expo prebuild --platform ios --no-install
           echo "Generated iOS files:"
           ls -la ios/
 
