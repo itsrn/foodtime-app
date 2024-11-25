@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "foodtime",
+    "name": "FoodTime",
     "slug": "foodtime",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -9,13 +9,19 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.itsron.foodtime",
+      "buildNumber": "1.0.0"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "RECEIVE_BOOT_COMPLETED"
+      ],
+      "package": "com.itsron.foodtime"
     },
     "web": {
       "bundler": "metro",
@@ -30,12 +36,34 @@
           "image": "./assets/images/splash-icon.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#FAFAFA"
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "color": "#ffffff"
         }
       ]
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "androidStatusBar": {
+      "backgroundColor": "#FAFAFA",
+      "barStyle": "dark-content"
+    },
+    "androidNavigationBar": {
+      "backgroundColor": "#FAFAFA",
+      "barStyle": "dark-content"
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "4d231e2e-9881-4a6d-a9b5-b56d476d138e"
+      }
     }
   }
 }
